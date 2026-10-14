@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #070c18;
+  }
+  .light ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0891b2;
+  }
+}
+
+@layer utilities {
+  /* High-end subtle silicon wafer grid background */
+  .bg-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+  }
+
+  .dark .bg-grid-pattern-dense {
+    background-size: 24px 24px;
+    background-image: 
+      radial-gradient(circle, rgba(6, 182, 212, 0.12) 1px, transparent 1px);
+  }
+
+  .light .bg-grid-pattern-dense {
+    background-size: 24px 24px;
+    background-image: 
+      radial-gradient(circle, rgba(14, 116, 144, 0.08) 1px, transparent 1px);
+  }
+
+  /* Glassmorphism panel */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  .dark .glass-card {
+    background: rgba(11, 19, 36, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  /* Glowing semiconductor gradient border effect on hover */
+  .chip-border-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .chip-border-hover:hover {
+    border-color: rgba(6, 182, 212, 0.5);
+    box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
+  }
+}
